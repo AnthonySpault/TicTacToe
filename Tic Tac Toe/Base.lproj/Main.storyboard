@@ -25,12 +25,13 @@
                                     <constraint firstAttribute="height" constant="48" id="RPr-Qh-sKF"/>
                                     <constraint firstAttribute="width" constant="270" id="bWc-S5-M9l"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Jouer en Ligne">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Recherche de joueurs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ovB-aV-WBV" kind="presentation" id="PQl-P5-L5g"/>
+                                    <action selector="onlinePlayButtonAction:" destination="2ol-Dw-fF7" eventType="touchUpInside" id="4uQ-ke-NBR"/>
+                                    <segue destination="wme-Nl-gZt" kind="presentation" identifier="playOnline" id="1ye-ch-gmI"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cP7-EI-6iF">
@@ -52,7 +53,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="En ligne" image="wireless-internet.png" largeContentSizeImage="wireless-internet@2x.png" id="5sR-XX-8Yf"/>
                     <connections>
-                        <outlet property="onlinePlayButton" destination="wr4-AU-X4s" id="6X6-6j-vtL"/>
+                        <outlet property="onlinePlayButtonOutlet" destination="wr4-AU-X4s" id="XtS-jK-5FK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJY-fm-n49" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,7 +82,7 @@
                                     <constraint firstAttribute="width" constant="270" id="ADw-4P-qig"/>
                                     <constraint firstAttribute="height" constant="48" id="cKo-ra-Q6i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Jouer Hors Ligne">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -448,6 +449,22 @@
             </objects>
             <point key="canvasLocation" x="1924" y="134"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2EI-R5-IY9">
+            <objects>
+                <navigationController id="wme-Nl-gZt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JAe-Hh-R5L">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ovB-aV-WBV" kind="relationship" relationship="rootViewController" id="rMy-z6-gbl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPB-eV-M60" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-692"/>
+        </scene>
         <!--En ligne-->
         <scene sceneID="fGM-L6-xO4">
             <objects>
@@ -457,14 +474,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" tag="-1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grille.png" translatesAutoresizingMaskIntoConstraints="NO" id="C8N-sx-uoo">
-                                <rect key="frame" x="37.666666666666657" y="261" width="300" height="300"/>
+                                <rect key="frame" x="37.666666666666657" y="283" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="dmc-we-M7g"/>
                                     <constraint firstAttribute="height" constant="300" id="w56-f9-CPo"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOm-oi-jIX">
-                                <rect key="frame" x="37.666666666666657" y="261" width="97" height="97"/>
+                                <rect key="frame" x="37.666666666666657" y="283" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="6fT-80-SGi"/>
                                     <constraint firstAttribute="width" constant="97" id="NR7-Ck-5P6"/>
@@ -475,11 +492,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="uQL-09-yLE"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="gWZ-Bn-NnI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zi3-fO-UKZ">
-                                <rect key="frame" x="139" y="261" width="97" height="97"/>
+                                <rect key="frame" x="139" y="283" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="XtI-fC-nlO"/>
                                     <constraint firstAttribute="height" constant="97" id="y64-fF-JCR"/>
@@ -490,11 +507,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="2SY-zp-vVb"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="qvU-GC-SiX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sri-IZ-eWa">
-                                <rect key="frame" x="240" y="261" width="97" height="97"/>
+                                <rect key="frame" x="240" y="283" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="IxK-SX-oSL"/>
                                     <constraint firstAttribute="height" constant="97" id="VXe-gW-al4"/>
@@ -505,11 +522,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="qqU-6S-KbA"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="5QZ-TK-wqM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjp-LJ-evs">
-                                <rect key="frame" x="240" y="363" width="97" height="97"/>
+                                <rect key="frame" x="240" y="385" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="PiC-xO-7md"/>
                                     <constraint firstAttribute="width" constant="97" id="kxE-lW-3fz"/>
@@ -520,11 +537,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="S8i-f6-KaJ"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="eZA-7N-VKv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dl-M1-ntG">
-                                <rect key="frame" x="240" y="464" width="97" height="97"/>
+                                <rect key="frame" x="240" y="486" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="Crq-fZ-OGx"/>
                                     <constraint firstAttribute="height" constant="97" id="NMh-09-snK"/>
@@ -535,11 +552,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="7n6-zv-mnb"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="Yei-kT-Wey"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iP-cb-AGc">
-                                <rect key="frame" x="139" y="464" width="97" height="97"/>
+                                <rect key="frame" x="139" y="486" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="RDm-Y5-G7c"/>
                                     <constraint firstAttribute="height" constant="97" id="lxl-2g-kf1"/>
@@ -550,11 +567,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="Isv-YN-ogT"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="YwB-Uq-yXN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc2-ih-pJo">
-                                <rect key="frame" x="37" y="464" width="97" height="97"/>
+                                <rect key="frame" x="37" y="486" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="1uO-JB-xHa"/>
                                     <constraint firstAttribute="height" constant="97" id="935-JX-Gbe"/>
@@ -565,11 +582,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="CAT-Gm-c3i"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="oAq-Tg-eFJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKO-h1-ecE">
-                                <rect key="frame" x="37" y="363" width="97" height="97"/>
+                                <rect key="frame" x="37" y="385" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="ASp-4B-VHF"/>
                                     <constraint firstAttribute="width" constant="97" id="fWu-hF-d6N"/>
@@ -580,11 +597,11 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="Q7D-67-AmO"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="ECW-sf-ODB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99P-0R-kzo">
-                                <rect key="frame" x="139" y="363" width="97" height="97"/>
+                                <rect key="frame" x="139" y="385" width="97" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="Qwx-El-l9e"/>
                                     <constraint firstAttribute="height" constant="97" id="SnY-TO-pSc"/>
@@ -595,11 +612,17 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="B8Y-ZX-2zn"/>
+                                    <action selector="buttonPressed:" destination="ovB-aV-WBV" eventType="touchUpInside" id="Jar-HH-nng"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-AG-wtH">
-                                <rect key="frame" x="187.66666666666666" y="69" width="0.0" height="0.0"/>
+                                <rect key="frame" x="187.66666666666666" y="113" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdu-fs-8wt">
+                                <rect key="frame" x="187" y="143.66666666666666" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -617,6 +640,8 @@
                             <constraint firstItem="C8N-sx-uoo" firstAttribute="leading" secondItem="99P-0R-kzo" secondAttribute="trailing" constant="-198.33333333333334" id="ODM-rS-jgx"/>
                             <constraint firstItem="XdI-AG-wtH" firstAttribute="centerX" secondItem="Cfo-EK-aJA" secondAttribute="centerX" id="RVM-15-8nK"/>
                             <constraint firstItem="XdI-AG-wtH" firstAttribute="top" secondItem="Cfo-EK-aJA" secondAttribute="top" constant="25" id="Sjh-nl-CmJ"/>
+                            <constraint firstItem="pdu-fs-8wt" firstAttribute="top" secondItem="XdI-AG-wtH" secondAttribute="bottom" constant="30.666666666666657" id="SqP-71-aMQ"/>
+                            <constraint firstItem="pdu-fs-8wt" firstAttribute="centerX" secondItem="3DV-qP-EtF" secondAttribute="centerX" id="ZsJ-2P-xdf"/>
                             <constraint firstItem="6Dl-M1-ntG" firstAttribute="top" secondItem="C8N-sx-uoo" secondAttribute="bottom" constant="-97" id="aOe-3v-tRL"/>
                             <constraint firstItem="yjp-LJ-evs" firstAttribute="leading" secondItem="C8N-sx-uoo" secondAttribute="trailing" constant="-97.666666666666629" id="cAA-0W-eAH"/>
                             <constraint firstItem="6Dl-M1-ntG" firstAttribute="leading" secondItem="C8N-sx-uoo" secondAttribute="trailing" constant="-97.666666666666629" id="eHa-93-VfJ"/>
@@ -633,26 +658,24 @@
                         <viewLayoutGuide key="safeArea" id="Cfo-EK-aJA"/>
                     </view>
                     <navigationItem key="navigationItem" title="En ligne" id="TzF-dV-vAI">
-                        <barButtonItem key="leftBarButtonItem" tag="-1" title="Retour" id="4tp-Vc-5bD">
-                            <connections>
-                                <action selector="closeButton:" destination="ovB-aV-WBV" id="1x1-V0-0PJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" tag="-1" title="Retour" id="4tp-Vc-5bD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ZBA-Ze-q8a">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
-                                <action selector="reloadGame:" destination="ovB-aV-WBV" id="4CT-oM-xZC"/>
+                                <action selector="reloadGame:" destination="ovB-aV-WBV" id="tOG-Xb-Hhm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="reloadButton" destination="ZBA-Ze-q8a" id="327-YL-jiv"/>
+                        <outlet property="currentTurnLabel" destination="pdu-fs-8wt" id="QXn-6e-asH"/>
+                        <outlet property="gameInfo" destination="XdI-AG-wtH" id="McZ-tk-9Bg"/>
+                        <outlet property="reloadButton" destination="ZBA-Ze-q8a" id="o5X-kg-soi"/>
                         <outlet property="resultLabel" destination="XdI-AG-wtH" id="98U-Wg-yM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMg-k1-NEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-692"/>
+            <point key="canvasLocation" x="2860" y="-692"/>
         </scene>
     </scenes>
     <resources>

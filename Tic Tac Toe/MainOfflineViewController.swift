@@ -5,7 +5,7 @@
 //  Created by Anthony Spault on 30/01/2018.
 //  Copyright © 2018 Anthony Spault. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class MainOfflineViewController: UIViewController {
