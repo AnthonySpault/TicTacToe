@@ -7,21 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E910BF5020DA81D9009AA41D /* O.png in Resources */ = {isa = PBXBuildFile; fileRef = E910BF4E20DA81D8009AA41D /* O.png */; };
+		E910BF5320DA8400009AA41D /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = E910BF5220DA83FF009AA41D /* X.png */; };
+		E91B144520D111A800492CE7 /* wireless-internet.png in Resources */ = {isa = PBXBuildFile; fileRef = E91B144420D111A800492CE7 /* wireless-internet.png */; };
+		E91B144920D111CB00492CE7 /* no-wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = E91B144820D111CB00492CE7 /* no-wifi.png */; };
+		E91B144B20D111D800492CE7 /* no-wifi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91B144A20D111D800492CE7 /* no-wifi@2x.png */; };
 		E9403C762020A98600BDE6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9403C752020A98600BDE6A1 /* AppDelegate.swift */; };
-		E9403C782020A98600BDE6A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9403C772020A98600BDE6A1 /* ViewController.swift */; };
+		E9403C782020A98600BDE6A1 /* MainOfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9403C772020A98600BDE6A1 /* MainOfflineViewController.swift */; };
 		E9403C7B2020A98600BDE6A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9403C792020A98600BDE6A1 /* Main.storyboard */; };
 		E9403C7D2020A98600BDE6A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9403C7C2020A98600BDE6A1 /* Assets.xcassets */; };
 		E9403C802020A98600BDE6A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9403C7E2020A98600BDE6A1 /* LaunchScreen.storyboard */; };
+		E982CE472021C82F00E9C066 /* grille.png in Resources */ = {isa = PBXBuildFile; fileRef = E982CE442021C82E00E9C066 /* grille.png */; };
+		E9C2C8D720E3866C00DF2E09 /* MainOnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C2C8D620E3866C00DF2E09 /* MainOnlineViewController.swift */; };
+		E9C2C8D920E3872200DF2E09 /* OnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C2C8D820E3872200DF2E09 /* OnlineViewController.swift */; };
+		E9C62B4020E13D69009F3270 /* trophy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9C62B3E20E13D68009F3270 /* trophy@2x.png */; };
+		E9C62B4120E13D69009F3270 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = E9C62B3F20E13D69009F3270 /* trophy.png */; };
+		E9C62B4320E13F10009F3270 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C62B4220E13F10009F3270 /* ScoreViewController.swift */; };
+		E9E52C4C2020BDA70057103F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E52C4B2020BDA70057103F /* logo.png */; };
+		E9E52C4E2020C2840057103F /* OfllineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E52C4D2020C2840057103F /* OfllineViewController.swift */; };
+		E9EBE47920DA9854009EA7D3 /* wireless-internet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9EBE47820DA9854009EA7D3 /* wireless-internet@2x.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E9C2C8D520E2898F00DF2E09 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E910BF4E20DA81D8009AA41D /* O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O.png; sourceTree = "<group>"; };
+		E910BF5220DA83FF009AA41D /* X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X.png; sourceTree = "<group>"; };
+		E91B144420D111A800492CE7 /* wireless-internet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wireless-internet.png"; sourceTree = "<group>"; };
+		E91B144820D111CB00492CE7 /* no-wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-wifi.png"; sourceTree = "<group>"; };
+		E91B144A20D111D800492CE7 /* no-wifi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-wifi@2x.png"; sourceTree = "<group>"; };
 		E9403C722020A98600BDE6A1 /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9403C752020A98600BDE6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9403C772020A98600BDE6A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9403C772020A98600BDE6A1 /* MainOfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOfflineViewController.swift; sourceTree = "<group>"; };
 		E9403C7A2020A98600BDE6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9403C7C2020A98600BDE6A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9403C7F2020A98600BDE6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9403C812020A98600BDE6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E982CE442021C82E00E9C066 /* grille.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grille.png; sourceTree = "<group>"; };
+		E9C2C8D620E3866C00DF2E09 /* MainOnlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnlineViewController.swift; sourceTree = "<group>"; };
+		E9C2C8D820E3872200DF2E09 /* OnlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineViewController.swift; sourceTree = "<group>"; };
+		E9C62B3E20E13D68009F3270 /* trophy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy@2x.png"; sourceTree = "<group>"; };
+		E9C62B3F20E13D69009F3270 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
+		E9C62B4220E13F10009F3270 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		E9E52C4B2020BDA70057103F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		E9E52C4D2020C2840057103F /* OfllineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfllineViewController.swift; sourceTree = "<group>"; };
+		E9EBE47820DA9854009EA7D3 /* wireless-internet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wireless-internet@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +95,36 @@
 		E9403C742020A98600BDE6A1 /* Tic Tac Toe */ = {
 			isa = PBXGroup;
 			children = (
+				E9C2C8A720E2730E00DF2E09 /* Assets */,
 				E9403C752020A98600BDE6A1 /* AppDelegate.swift */,
-				E9403C772020A98600BDE6A1 /* ViewController.swift */,
-				E9403C792020A98600BDE6A1 /* Main.storyboard */,
-				E9403C7C2020A98600BDE6A1 /* Assets.xcassets */,
-				E9403C7E2020A98600BDE6A1 /* LaunchScreen.storyboard */,
 				E9403C812020A98600BDE6A1 /* Info.plist */,
+				E9403C792020A98600BDE6A1 /* Main.storyboard */,
+				E9403C7E2020A98600BDE6A1 /* LaunchScreen.storyboard */,
+				E9403C7C2020A98600BDE6A1 /* Assets.xcassets */,
+				E9403C772020A98600BDE6A1 /* MainOfflineViewController.swift */,
+				E9E52C4D2020C2840057103F /* OfllineViewController.swift */,
+				E9C2C8D620E3866C00DF2E09 /* MainOnlineViewController.swift */,
+				E9C2C8D820E3872200DF2E09 /* OnlineViewController.swift */,
+				E9C62B4220E13F10009F3270 /* ScoreViewController.swift */,
 			);
 			path = "Tic Tac Toe";
+			sourceTree = "<group>";
+		};
+		E9C2C8A720E2730E00DF2E09 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E9C62B3F20E13D69009F3270 /* trophy.png */,
+				E9C62B3E20E13D68009F3270 /* trophy@2x.png */,
+				E9EBE47820DA9854009EA7D3 /* wireless-internet@2x.png */,
+				E910BF5220DA83FF009AA41D /* X.png */,
+				E910BF4E20DA81D8009AA41D /* O.png */,
+				E982CE442021C82E00E9C066 /* grille.png */,
+				E9E52C4B2020BDA70057103F /* logo.png */,
+				E91B144820D111CB00492CE7 /* no-wifi.png */,
+				E91B144A20D111D800492CE7 /* no-wifi@2x.png */,
+				E91B144420D111A800492CE7 /* wireless-internet.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +137,7 @@
 				E9403C6E2020A98600BDE6A1 /* Sources */,
 				E9403C6F2020A98600BDE6A1 /* Frameworks */,
 				E9403C702020A98600BDE6A1 /* Resources */,
+				E9C2C8D520E2898F00DF2E09 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -90,12 +154,13 @@
 		E9403C6A2020A98600BDE6A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Anthony Spault";
 				TargetAttributes = {
 					E9403C712020A98600BDE6A1 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,9 +188,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E910BF5320DA8400009AA41D /* X.png in Resources */,
+				E9C62B4120E13D69009F3270 /* trophy.png in Resources */,
+				E982CE472021C82F00E9C066 /* grille.png in Resources */,
 				E9403C802020A98600BDE6A1 /* LaunchScreen.storyboard in Resources */,
+				E91B144520D111A800492CE7 /* wireless-internet.png in Resources */,
 				E9403C7D2020A98600BDE6A1 /* Assets.xcassets in Resources */,
+				E9EBE47920DA9854009EA7D3 /* wireless-internet@2x.png in Resources */,
+				E91B144B20D111D800492CE7 /* no-wifi@2x.png in Resources */,
+				E9E52C4C2020BDA70057103F /* logo.png in Resources */,
+				E9C62B4020E13D69009F3270 /* trophy@2x.png in Resources */,
+				E91B144920D111CB00492CE7 /* no-wifi.png in Resources */,
 				E9403C7B2020A98600BDE6A1 /* Main.storyboard in Resources */,
+				E910BF5020DA81D9009AA41D /* O.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,8 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9403C782020A98600BDE6A1 /* ViewController.swift in Sources */,
+				E9E52C4E2020C2840057103F /* OfllineViewController.swift in Sources */,
+				E9403C782020A98600BDE6A1 /* MainOfflineViewController.swift in Sources */,
 				E9403C762020A98600BDE6A1 /* AppDelegate.swift in Sources */,
+				E9C2C8D920E3872200DF2E09 /* OnlineViewController.swift in Sources */,
+				E9C2C8D720E3866C00DF2E09 /* MainOnlineViewController.swift in Sources */,
+				E9C62B4320E13F10009F3270 /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +256,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +264,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -234,6 +315,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +323,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -278,9 +361,9 @@
 				DEVELOPMENT_TEAM = H3NW2DZFME;
 				INFOPLIST_FILE = "Tic Tac Toe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "spault.Tic-Tac-Toe";
+				PRODUCT_BUNDLE_IDENTIFIER = anthonyspault.tictactoe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -293,9 +376,9 @@
 				DEVELOPMENT_TEAM = H3NW2DZFME;
 				INFOPLIST_FILE = "Tic Tac Toe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "spault.Tic-Tac-Toe";
+				PRODUCT_BUNDLE_IDENTIFIER = anthonyspault.tictactoe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
