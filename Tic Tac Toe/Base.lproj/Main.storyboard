@@ -31,7 +31,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onlinePlayButtonAction:" destination="2ol-Dw-fF7" eventType="touchUpInside" id="4uQ-ke-NBR"/>
-                                    <segue destination="wme-Nl-gZt" kind="presentation" identifier="playOnline" id="1ye-ch-gmI"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cP7-EI-6iF">
@@ -54,6 +53,7 @@
                     <tabBarItem key="tabBarItem" title="En ligne" image="wireless-internet.png" largeContentSizeImage="wireless-internet@2x.png" id="5sR-XX-8Yf"/>
                     <connections>
                         <outlet property="onlinePlayButtonOutlet" destination="wr4-AU-X4s" id="XtS-jK-5FK"/>
+                        <segue destination="wme-Nl-gZt" kind="presentation" identifier="playOnline" id="JCi-Cv-hRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJY-fm-n49" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -65,6 +65,16 @@ class OnlineViewController: UIViewController {
     
     @IBAction func reloadGame(_ sender: UIBarButtonItem) {
         if (win) {
+            TTTSocket.sharedInstance.disconnect()
+            reloadButton.tintColor = UIColor.black
+            for i in 1..<10 {
+                let tmpButton = self.view.viewWithTag(i) as? UIButton
+                tmpButton?.setImage(nil, for: UIControlState.normal)
+                tmpButton?.tintColor = UIColor.black
+            }
+            gameInfo.text = "Recherche d'un joueur"
+            currentTurnLabel.text = "Merci de patienter"
+            TTTSocket.sharedInstance.connect()
             TTTSocket.sharedInstance.socket.emit("join_queue", user!)
         }
     }
@@ -79,8 +89,9 @@ class OnlineViewController: UIViewController {
         
         TTTSocket.sharedInstance.socket.on("join_game") {data, ack in
             let tmp = data as NSArray
-            let data = tmp[0] as! [String: Any]
-            self.initGame(data: data)
+            let defaultData = tmp[0] as! [String: Any]
+            print(data)
+            self.initGame(data: defaultData)
         }
         
         TTTSocket.sharedInstance.socket.on("movement") {data, ack in
