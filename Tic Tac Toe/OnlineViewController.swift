@@ -22,7 +22,9 @@ class OnlineViewController: UIViewController {
     @IBOutlet weak var gameInfo: UILabel!
     @IBOutlet weak var currentTurnLabel: UILabel!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
-    
+    @IBAction func quitAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     var defaultState: Any?
     var canPlay = false
@@ -39,7 +41,7 @@ class OnlineViewController: UIViewController {
         [1, 4, 7],
         [2, 5, 8]
     ]
-    var currentGame = ["", "", "", "", "", "", "", "", ""]
+    var currentGame = ["a", "a", "a", "a", "a", "a", "a", "a", "a"]
     var win = false
 
     
@@ -65,7 +67,6 @@ class OnlineViewController: UIViewController {
     
     @IBAction func reloadGame(_ sender: UIBarButtonItem) {
         if (win) {
-            TTTSocket.sharedInstance.disconnect()
             reloadButton.tintColor = UIColor.black
             for i in 1..<10 {
                 let tmpButton = self.view.viewWithTag(i) as? UIButton
@@ -74,7 +75,6 @@ class OnlineViewController: UIViewController {
             }
             gameInfo.text = "Recherche d'un joueur"
             currentTurnLabel.text = "Merci de patienter"
-            TTTSocket.sharedInstance.connect()
             TTTSocket.sharedInstance.socket.emit("join_queue", user!)
         }
     }
@@ -90,8 +90,19 @@ class OnlineViewController: UIViewController {
         TTTSocket.sharedInstance.socket.on("join_game") {data, ack in
             let tmp = data as NSArray
             let defaultData = tmp[0] as! [String: Any]
-            print(data)
             self.initGame(data: defaultData)
+        }
+        
+        TTTSocket.sharedInstance.socket.on("opponent_leave") {data, ack in
+            let tmp = data as NSArray
+            let response = tmp[0] as! [String: Any]
+            if (self.me == response["winner"] as? String) {
+                self.gameInfo.text = "Vous avez gagné !"
+                self.currentTurnLabel.text = "L'autre joueur a quitté la partie."
+            }
+            TTTSocket.sharedInstance.socket.emit("leave_game")
+            self.reloadButton.tintColor = nil
+            self.canPlay = false
         }
         
         TTTSocket.sharedInstance.socket.on("movement") {data, ack in
@@ -118,12 +129,16 @@ class OnlineViewController: UIViewController {
             } else {
                 button?.setImage(UIImage(named: "O.png"), for: UIControlState.normal)
             }
+            
             if (data["win"] as? Int == 1) {
                 self.currentTurnLabel.text = victoryMessage
                 self.canPlay = false
                 
                 for i in 0..<self.winPossibilities.count {
                     let first = self.currentGame[self.winPossibilities[i][0]]
+                    if (first == "a") {
+                        continue
+                    }
                     
                     var result = true
                     let current = self.winPossibilities[i]
@@ -134,6 +149,7 @@ class OnlineViewController: UIViewController {
                     }
                     if (result) {
                         self.win = true
+                        TTTSocket.sharedInstance.socket.emit("leave_game")
                         self.reloadButton.tintColor = nil
                         for i in 0..<3 {
                             let tmpButton = self.view.viewWithTag(current[i] + 1) as? UIButton
@@ -142,6 +158,13 @@ class OnlineViewController: UIViewController {
                         return
                     }
                 }
+            } else if (self.currentGame.index(of: "a") == nil) {
+                self.canPlay = false
+                self.gameInfo.text = "Match nul !"
+                self.currentTurnLabel.text = ""
+                self.win = true
+                TTTSocket.sharedInstance.socket.emit("leave_game")
+                self.reloadButton.tintColor = nil
             }
         }
     }

@@ -13,10 +13,24 @@ class MainOnlineViewController: UIViewController {
     var username = UserDefaults.standard.string(forKey: "username")
     
     @IBOutlet weak var onlinePlayButtonOutlet: UIButton!
+    @IBOutlet weak var pseudo: UILabel!
     @IBAction func onlinePlayButtonAction(_ sender: UIButton) {
         self.onlinePlayButtonOutlet.loadingIndicator(true)
-        self.onlinePlayButtonOutlet.setTitle("Recherche de joueurs", for: .normal)
+        self.onlinePlayButtonOutlet.setTitle("", for: .normal)
         TTTSocket.sharedInstance.socket.emit("join_queue", username!)
+    }
+    @IBAction func editUsername(_ sender: Any) {
+        let alert = UIAlertController(title: "Votre pseudo", message: "Votre pseudo sera affiché à l'autre joueur", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Toto"
+            textField.text = self.username
+        }
+        alert.addAction(UIAlertAction(title: "Valider", style: .default, handler: { [weak alert] (_) in
+            UserDefaults.standard.set(alert?.textFields![0].text, forKey: "username")
+            self.username = alert?.textFields![0].text
+            self.pseudo.text = alert?.textFields![0].text
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -34,11 +48,18 @@ class MainOnlineViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Valider", style: .default, handler: { [weak alert] (_) in
                 UserDefaults.standard.set(alert?.textFields![0].text, forKey: "username")
                 self.username = alert?.textFields![0].text
+                self.pseudo.text = alert?.textFields![0].text
             }))
             self.present(alert, animated: true, completion: nil)
         }
         
+        pseudo.text = self.username
+        
+        
+        
         TTTSocket.sharedInstance.socket.on("join_game") {data, ack in
+            self.onlinePlayButtonOutlet.loadingIndicator(false)
+            self.onlinePlayButtonOutlet.setTitle("Jouer en Ligne", for: .normal)
             self.performSegue(withIdentifier: "playOnline", sender: data)
         }
     }
